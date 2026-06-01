@@ -5,20 +5,26 @@ import { ChevronRight } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-end overflow-hidden pb-12 md:pb-24">
-      {/* Background Image without filters or overlays to show exact image */}
-      <div className="absolute inset-0 z-0 bg-black flex items-center justify-center">
+      {/* Background Image with smoky showroom gradient blend */}
+      <div className="absolute inset-0 z-0 bg-black flex items-center justify-center overflow-hidden">
         {/* Mobile Image (Portrait) */}
         <img
           src="/image copy.png"
           alt="VK Customs Fleet"
-          className="w-full h-full object-contain md:hidden"
+          className="w-full h-full object-contain md:hidden scale-140"
         />
         {/* Desktop Image (Landscape) */}
         <img
           src="/image.png"
           alt="VK Customs Fleet"
-          className="hidden md:block w-full h-full object-contain"
+          className="hidden md:block w-full h-full object-contain scale-145"
         />
+        
+        {/* Smoky Showroom Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/20 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none opacity-60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black pointer-events-none opacity-40"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)] pointer-events-none opacity-50"></div>
       </div>
 
       {/* Top Content: Logo */}
